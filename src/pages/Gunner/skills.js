@@ -120,11 +120,11 @@ function getVladofIngenuityShockDamageResistance(rank) {
 function getBehindTheIronCurtainShieldRechargeDelay(rank) {
   switch (rank) {
     case 1:
-      return 7;
+      return 12;
     case 2:
-      return 14;
+      return 21;
     case 3:
-      return 19;
+      return 28;
     default:
       return 0;
   }
@@ -186,9 +186,9 @@ const skills = {
     },
     "3": {
       "General Winter": {
-        text: "Minigun fires Cryo rounds which reduce Heat Gain and Fuel Drain, but deal reduced damage.",
+        text: "Minigun fires Cryo rounds which reduce Heat Gain and Fuel Drain.",
         type: SKILLS.AUGMENT_CHEVRON,
-        effect: (rank, level) => `Minigun Element: Cryo\nMinigun Fuel Drain: -40%\nMinigun Damage: -30%\nMinigun Cryo Efficiency: +20%`,
+        effect: (rank, level) => `Minigun Element: Cryo\nCryo Efficiency: +20%\nMinigun Fuel Drain: -40%`,
       },
       "Rushin' Offensive": {
         text: "Moze can sprint and shoot at the same time.",
@@ -210,7 +210,7 @@ const skills = {
       "Exploding. Bullets.": {
         text: "Minigun fires Explosive Rounds that deal increased Splash Damage, but its Fire Rate is decreased.",
         type: SKILLS.AUGMENT_CHEVRON,
-        effect: (rank, level) => `Minigun Damage: +126%\nMinigun Fire Rate: -75%`,
+        effect: (rank, level) => `Minigun Damage: +232%\nMinigun Fire Rate: -75%`,
       },
       "The Iron Bank": {
         text: "Increases Moze's Magazine Size.",
@@ -392,7 +392,7 @@ const skills = {
       "Security Bear": {
         text: "Iron Bear gains a bubble shield that reduces damage taken. The shield deactivates if it sustains too much damage, reactivating after a short cooldown.",
         ranks: 1,
-        effect: (rank, level) => `50% of Iron Bear Maximum Health added as Shields\nBubble Recharge Delay: 5 seconds`,
+        effect: (rank, level) => `60% of Iron Bear Maximum Armor added as Shields\nBubble Recharge Delay: 5 seconds`,
       },
       "Armored Infantry": {
         text: "While Moze's shields are active, she gains Damage Resistance and increased Gun Damage.",
@@ -441,7 +441,7 @@ const skills = {
       "Experimental Munitions": {
         text: "Whenever Moze and Iron Bear score a Critical Hit, they deal bonus Incendiary Damage.",
         ranks: 1,
-        effect: (rank, level) => `Bonus Incendiary Damage: +${percent(rank, 10)}% of damage dealt`,
+        effect: (rank, level) => `Bonus Incendiary Damage: +${percent(rank, 15)}% of damage dealt`,
       },
       "Wild Swing": {
         text: "Whenever Bear Fist hits an enemy, it deals random Bonus Elemental Damage to that enemy and all enemies nearby.",
@@ -458,7 +458,7 @@ const skills = {
       "Behind the Iron Curtain": {
         text: "Moze's Shield Recharge Delay is reduced, and her Shield Recharge Rate is increased.",
         ranks: 3,
-        effect: (rank, level) => `Shield Recharge Delay: -${getBehindTheIronCurtainShieldRechargeDelay(rank)}%\nShield Recharge Rate: +${percent(rank, 7)}%`,
+        effect: (rank, level) => `Shield Recharge Delay: -${getBehindTheIronCurtainShieldRechargeDelay(rank)}%\nShield Recharge Rate: +${percent(rank, 11)}%`,
       },
       "Desperate Measures": {
         text: "Moze's Gun Damage and Iron Bear's Damage is increased depending on how low their health is. The lower their health, the greater the increase.",
